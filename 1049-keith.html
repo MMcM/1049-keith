@@ -7,11 +7,39 @@
   <title>1049 Keith</title>
   <meta name="description" content="2023 fourth quarter posts" />
   <link rel="stylesheet" href="1049-keith.css" type="text/css" />
+
+  <script>
+function numberFootnotes() {
+  var n = 1;
+  for (let fn of document.getElementsByClassName('fn')) {
+    var fnn = fn.querySelector('.fnn');
+    var nn = '[' + n + ']';
+    fnn.innerText = nn;
+    let fnb = document.getElementById(fn.id.replace('fn-', 'fnb-'));
+    fnb.innerText = nn;
+    n += 1;
+  }
+}
+
+function openModal(src) {
+  document.getElementById('modal-image').src = src;
+  document.getElementById('model-popup').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('model-popup').style.display = 'none';
+}
+  </script>
 </head>
-<body>
+<body onload="numberFootnotes();">
 <h1>A History of 1049 Keith Avenue, Berkeley</h1>
 
-<img src="images/front-door-outside.jpg" alt="front door outside" width="140" height="148"/>
+<img src="images/front-door-outside.jpg" alt="front door outside" onclick="openModal(this.src);" width="140" height="148"/>
+
+<div id="model-popup" style="display:none; position:fixed; z-index:1; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); text-align:center;">
+  <span onclick="closeModal()" style="position:absolute; top:20px; right:35px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+  <img id="modal-image" style="margin-top:5%; max-width:80%; max-height:80%;">
+</div>
 
 <p>
 <span class="person">Paul Theodore Beygrau</span> (1871-1935) was a designer, artist, and inventor, born in England, who spent most of his life in North America.
@@ -43,7 +71,7 @@ In the late &apos;20s, the Beygraus had a pair of adjacent homes built at 1049 a
 By 1899, Beygrau was working in Seattle. His brother, Frederick, initiated a missing person inquiry for him there<a href="#fn-seattle-missing" id="fnb-seattle-missing">[*]</a>.
 </p>
 <div>
-<img src="images/Seattle_Post_Intelligencer_1899_04_22_5.jpg" alt="" width="285" height="90"/>
+<img src="images/Seattle_Post_Intelligencer_1899_04_22_5.jpg" alt="" onclick="openModal(this.src);" width="285" height="90"/>
 </div>
 
 <p>
@@ -56,9 +84,9 @@ In 1914, Beygrau opened an Art School in Seattle. In promoting this<a href="#fn-
   <li>that his brother was &ldquo;head of the commercial science department of Columbia University&rdquo; (see below)</li>
 </ul>
 <div>
-<img src="images/Seattle_Daily_Times_1914-08-23_21.png" alt="Seattle Art School advertisement" width="156" height="137"/>
-<img src="images/Seattle_Daily_Times_1914-08-23_22.png" alt="Seattle Art School advertorial" width="152" height="139"/>
-<img src="images/Seattle_Daily_Times_1914-11-10_7.png" alt="Saloons are the Real American Art Academies" width="86" height="323"/>
+<img src="images/Seattle_Daily_Times_1914-08-23_21.png" alt="Seattle Art School advertisement" onclick="openModal(this.src);" width="156" height="137"/>
+<img src="images/Seattle_Daily_Times_1914-08-23_22.png" alt="Seattle Art School advertorial" onclick="openModal(this.src);" width="152" height="139"/>
+<img src="images/Seattle_Daily_Times_1914-11-10_7.png" alt="Saloons are the Real American Art Academies" onclick="openModal(this.src);" width="86" height="323"/>
 </div>
 
 <p>
@@ -66,9 +94,9 @@ By 1923, Beygrau was advertising<a href="#fn-340-mason" id="fnb-340-mason">[*]</
 The Beygraus were living in Santa Rosa<a href="#fn-santa-rosa" id="fnb-santa-rosa">[*]</a>, where, in 1924, he opened a factory for sheet plaster.
 </p>
 <div>
-<img src="images/San_Francisco_Chronicle_1923_10_07_73.jpg" alt="Paul Beygrau Home Builders" width="279" height="283"/>
-<img src="images/The_Press_Democrat_1924_06_13_10.jpg" alt="Plan Factory to Make Sheet Plaster" width="132" height="370"/>
-<img src="images/The_Press_Democrat_1924_08_14_6.jpg" alt="Noted Savant on Visit Here" width="172" height="369"/>
+<img src="images/San_Francisco_Chronicle_1923_10_07_73.jpg" alt="Paul Beygrau Home Builders" onclick="openModal(this.src);" width="279" height="283"/>
+<img src="images/The_Press_Democrat_1924_06_13_10.jpg" alt="Plan Factory to Make Sheet Plaster" onclick="openModal(this.src);" width="132" height="370"/>
+<img src="images/The_Press_Democrat_1924_08_14_6.jpg" alt="Noted Savant on Visit Here" onclick="openModal(this.src);" width="172" height="369"/>
 </div>
 
 <p>
@@ -77,26 +105,26 @@ In 1929, he invented a wall material called &ldquo;<a href="https://archive.org/
 It is not clear whether any special materials were used in 1049 Keith; the walls appear to be lath plaster, but there aren&apos;t any large holes yet.
 </p>
 <div>
-<img src="images/San_Francisco_Chronicle_1929_07_26_35.jpg" alt="Berkeley Man Devises New Home Finish" width="101" height="370"/>
+<img src="images/San_Francisco_Chronicle_1929_07_26_35.jpg" alt="Berkeley Man Devises New Home Finish" onclick="openModal(this.src);" width="101" height="370"/>
 </div>
 
 <p>
 Upon completion, 1049 Keith was prominently featured in local newspapers<a href="#fn-artists-house" id="fnb-artists-house">[*]</a>.
 </p>
 <div>
-<img src="images/San_Francisco_Chronicle_1928_06_03_79.jpg" alt="Artist's House Shows Departure From General Run" width="223" height="370"/>
-<img src="images/San_Francisco_Chronicle_1928_06_03_80.jpg" alt="Where Artists Live in Pleasant Quarters" width="119" height="368"/>
-<img src="images/The_Oakland_Post_Enquirer_1928_11_10_2.jpg" alt="Berkeley Home Symbol of Dreams Fulfilled" width="335" height="225"/>
-<img src="images/The_Oakland_Post_Enquirer_1928_11_10_4.jpg" alt="Ideal Home" width="115" height="398"/>
+<img src="images/San_Francisco_Chronicle_1928_06_03_79.jpg" alt="Artist's House Shows Departure From General Run" onclick="openModal(this.src);" width="223" height="370"/>
+<img src="images/San_Francisco_Chronicle_1928_06_03_80.jpg" alt="Where Artists Live in Pleasant Quarters" onclick="openModal(this.src);" width="119" height="368"/>
+<img src="images/The_Oakland_Post_Enquirer_1928_11_10_2.jpg" alt="Berkeley Home Symbol of Dreams Fulfilled" onclick="openModal(this.src);" width="335" height="225"/>
+<img src="images/The_Oakland_Post_Enquirer_1928_11_10_4.jpg" alt="Ideal Home" onclick="openModal(this.src);" width="115" height="398"/>
 </div>
 
 <p>
 Paul&apos;s brother, <span class="person">Frederick Reginald Beygrau</span> (1873-1941) was an author and educator on shorthand. He was Director of the Stenography and Typewriting Department at <a href="https://findingaids.library.columbia.edu/archives/cul-6909782">Columbia</a> University's Teachers College (note how this was characterized above) and later taught it in New York high schools. Both brothers were friends of <a href="https://en.wikipedia.org/wiki/Luther_Burbank"><span class="person">Luther Burbank</span></a> (1849-1926), who died before 1049 Keith was complete. Burbank would visit while it was a work in progress and was the inspiration for the solarium: there were plants growing at the center of the circle of columns<a href="#fn-burbank" id="fnb-burbank">[*]</a>.
 </p>
 <div>
-<img src="images/Burbank-Beygrau.jpg" alt="Luther Burbank and Paul Beygrau" width="252" height="311"/>
-<img src="images/San_Francisco_Bulletin_1928_10_26_3.jpg" alt="Artists Finish Novel Home" width="303" height="395"/>
-<img src="images/Mount_Vernon_Argus_1935_04_19_10.jpg" alt="Church to Hear Lecture on Burbank's Life Work" width="283" height="302"/>
+<img src="images/Burbank-Beygrau.jpg" alt="Luther Burbank and Paul Beygrau" onclick="openModal(this.src);" width="252" height="311"/>
+<img src="images/San_Francisco_Bulletin_1928_10_26_3.jpg" alt="Artists Finish Novel Home" onclick="openModal(this.src);" width="303" height="395"/>
+<img src="images/Mount_Vernon_Argus_1935_04_19_10.jpg" alt="Church to Hear Lecture on Burbank's Life Work" onclick="openModal(this.src);" width="283" height="302"/>
 </div>
 
 <p>
@@ -107,20 +135,20 @@ The Beygraus had taken out a mortgage to build on Keith, and in 1930, they lost 
 <span class="person">Agnes Emily Hoyle</span> (1883-1974), a San Francisco lawyer, bought 1049 Keith in foreclosure. She continued to live in San Francisco and initially only used it on weekends for parties. One, in particular, was an Italian themed dinner party, on Saturday, May 27, 1933, for the Queen&apos;s Bench, an organization of women lawyers<a href="#fn-queens-bench" id="fnb-queens-bench">[*]</a>.
 </p>
 <div>
-<img src="images/The_Recorder_1933_05_27_1.jpg" alt="Recorder" width="265" height="370"/>
-<img src="images/The_San_Francisco_Call_Bulletin_1933_05_27_4.jpg" alt="Call Bulletin" width="341" height="225"/>
-<img src="images/San_Francisco_Chronicle_1933_05_27_22.jpg" alt="Chronicle" width="227" height="190"/>
-<img src="images/The_San_Francisco_Examiner_1933_05_27_2.jpg" alt="Examiner" width="280" height="166"/>
+<img src="images/The_Recorder_1933_05_27_1.jpg" alt="Recorder" onclick="openModal(this.src);" width="265" height="370"/>
+<img src="images/The_San_Francisco_Call_Bulletin_1933_05_27_4.jpg" alt="Call Bulletin" onclick="openModal(this.src);" width="341" height="225"/>
+<img src="images/San_Francisco_Chronicle_1933_05_27_22.jpg" alt="Chronicle" onclick="openModal(this.src);" width="227" height="190"/>
+<img src="images/The_San_Francisco_Examiner_1933_05_27_2.jpg" alt="Examiner" onclick="openModal(this.src);" width="280" height="166"/>
 </div>
 
 <p>
 Starting in 1936, Hoyle rented 1049 Keith to <span class="person">John W. Winkler</span> (1894-1979), an Austrian born American etcher. He lived there until 1964, during which time the landscaping was improved with retaining walls and terraces. Winkler kept as pets a pair of skunks, who lived on the balcony, and a Gila monster named Montezuma. There are newspaper reports in the late &apos;30s and 1940 of Montezuma escaping and wandering the neighborhood. <a href="#fn-montezuma" id="fnb-montezuma">[*]</a>
 </p>
 <div>
-<img src="images/The_Oakland_Post_Enquirer_1938_07_15_5.jpg" alt="Gila Monster Rescued From Police Station" width="139" height="366"/>
-<img src="images/Oakland_Tribune_1938_07_15_Page_18.jpg" alt="Errant Gila Monster Claimed by Owner" width="225" height="372"/>
-<img src="images/Oakland_Tribune_1939_05_31_Page_5.jpg" alt="Pet Gila Monster Goes Visiting but Police End Jaunt" width="127" height="390"/>
-<img src="images/The_San_Francisco_News_1940_12_10_28.jpg" alt="Monster in My Backyard" width="197" height="383"/>
+<img src="images/The_Oakland_Post_Enquirer_1938_07_15_5.jpg" alt="Gila Monster Rescued From Police Station" onclick="openModal(this.src);" width="139" height="366"/>
+<img src="images/Oakland_Tribune_1938_07_15_Page_18.jpg" alt="Errant Gila Monster Claimed by Owner" onclick="openModal(this.src);" width="225" height="372"/>
+<img src="images/Oakland_Tribune_1939_05_31_Page_5.jpg" alt="Pet Gila Monster Goes Visiting but Police End Jaunt" onclick="openModal(this.src);" width="127" height="390"/>
+<img src="images/The_San_Francisco_News_1940_12_10_28.jpg" alt="Monster in My Backyard" onclick="openModal(this.src);" width="197" height="383"/>
 </div>
 
 <p>
@@ -131,7 +159,7 @@ Winkler<a href="#fn-winkler-master-line" id="fnb-winkler-master-line">[*]</a> li
 In 1958, <a href="https://en.wikipedia.org/wiki/Imogen_Cunningham"><span class="person">Imogen Cunningham</span></a> took a <a href="https://www.sfmoma.org/artwork/69.61.3/">photo</a> of Winkler in the solarium, which he used as a studio.
 </p>
 <div>
-<img src="images/Cunningham.jpg" alt="John Winkler, Etcher" width="327" height="400"/>
+<img src="images/Cunningham.jpg" alt="John Winkler, Etcher" onclick="openModal(this.src);" width="327" height="400"/>
 </div>
 
 <p>
@@ -170,8 +198,8 @@ By 1978, a restoration expert, needed to be called in for 1049 Keith. He repaire
 The April 25, 1982 Sunday supplement to the <i>San Francisco Chronicle</i> and the <i>Examiner</i> included a piece, titled &ldquo;Quiet Elegance&rdquo;, featuring unusual homes in the Berkeley Hills. One was 1049 Keith. This shows the restored columns, which have since been simplified. The supplement was in color, but, unfortunately, the scans I can find are not.
 </p>
 <div>
-<img src="images/The_San_Francisco_Examiner_1982_04_25_478.jpg" alt="Quiet Elegance" width="292" height="350"/>
-<img src="images/The_San_Francisco_Examiner_1982_04_25_480.jpg" alt="Beygrau photos" width="291" height="350"/>
+<img src="images/The_San_Francisco_Examiner_1982_04_25_478.jpg" alt="Quiet Elegance" onclick="openModal(this.src);" width="292" height="350"/>
+<img src="images/The_San_Francisco_Examiner_1982_04_25_480.jpg" alt="Beygrau photos" onclick="openModal(this.src);" width="291" height="350"/>
 </div>
 
 <p>
@@ -219,14 +247,14 @@ This being the later 2020s, there is what appears to be some kind of <a href="ht
 
 <hr/>
 
-<div class="fn" id="fn-missing">
-<a href="#fnb-missing">^</a>
-[*] <i>Seattle Post-Intelligencer</i>. April 22, 1899. Pg. 5.
+<div class="fn" id="fn-seattle-missing">
+<a href="#fnb-seattle-missing">^</a>
+<span class="fnn">[*]</span> <i>Seattle Post-Intelligencer</i>. April 22, 1899. Pg. 5.
 </div>
 
 <div class="fn" id="fn-seattle-art-school">
 <a href="#fnb-seattle-art-school">^</a>
-[*] <i>Seattle Times</i>. Left-to-right:
+<span class="fnn">[*]</span> <i>Seattle Times</i>. Left-to-right:
 <ul>
   <li>August 23, 1914. pg. 21.</li>
   <li>August 23, 1914. pg. 22.</li>
@@ -236,22 +264,22 @@ This being the later 2020s, there is what appears to be some kind of <a href="ht
 
 <div class="fn" id="fn-340-mason">
 <a href="#fnb-340-mason">^</a>
-[*] <i>San Francisco Chronicle</i>, Furniture Styles Show Number. October 7, 1923. Pg. 9H.
+<span class="fnn">[*]</span> <i>San Francisco Chronicle</i>, Furniture Styles Show Number. October 7, 1923. Pg. 9H.
 </div>
 
 <div class="fn" id="fn-santa-rosa">
 <a href="#fnb-santa-rosa">^</a>
-[*] <i>Santa Rosa Press Democrat</i>, June 13 and August 14, 1924. Pg. 10 and 6, resp.
+<span class="fnn">[*]</span> <i>Santa Rosa Press Democrat</i>, June 13 and August 14, 1924. Pg. 10 and 6, resp.
 </div>
 
 <div class="fn" id="fn-tiburene">
 <a href="#fnb-tiburene">^</a>
-[*] <i>San Francisco Chronicle</i>, July 26, 1929. Pg. 35.
+<span class="fnn">[*]</span> <i>San Francisco Chronicle</i>, July 26, 1929. Pg. 35.
 </div>
 
 <div class="fn" id="fn-artists-house">
 <a href="#fnb-artists-house">^</a>
-[*] Left-to-right:
+<span class="fnn">[*]</span> Left-to-right:
 <ul>
   <li><i>San Francisco Chronicle</i>, Easy Bay Section. June 3, 1928. pg. 1.</li>
   <li><i>ibid</i>. pg. 2.</li>
@@ -262,7 +290,7 @@ This being the later 2020s, there is what appears to be some kind of <a href="ht
 
 <div class="fn" id="fn-burbank">
 <a href="#fnb-burbank">^</a>
-[*] Left-to-right:
+<span class="fnn">[*]</span> Left-to-right:
 <ul>
   <li><a href="https://digital.sonomalibrary.org/documents/detail/71430">Sonoma County Library Digital Archives</a></li>
   <li><i>San Francisco Bulletin</i>. October 26, 1928. pg. 3.</li>
@@ -272,7 +300,7 @@ This being the later 2020s, there is what appears to be some kind of <a href="ht
 
 <div class="fn" id="fn-queens-bench">
 <a href="#fnb-queens-bench">^</a>
-[*] All May 27, 1933; left-to-right:
+<span class="fnn">[*]</span> All May 27, 1933; left-to-right:
 <ul>
   <li><i>Recorder</i>. pg. 1.</li>
   <li><i>San Francisco Call Bulletin</i>. pg. 4.</li>
@@ -283,7 +311,7 @@ This being the later 2020s, there is what appears to be some kind of <a href="ht
 
 <div class="fn" id="fn-montezuma">
 <a href="#fnb-montezuma">^</a>
-[*] Left-to-right:
+<span class="fnn">[*]</span> Left-to-right:
 <ul>
   <li><i>Oakland Post Enquirer</i>. July 15, 1938. pg. 5.</li>
   <li><i>Oakland Tribune</i>. July 15, 1938. pg. 18.</li>
@@ -294,18 +322,20 @@ This being the later 2020s, there is what appears to be some kind of <a href="ht
 
 <div class="fn" id="fn-winkler-master-line">
 <a href="#fnb-winkler-master-line">^</a>
-[*]
+<span class="fnn">[*]</span>
 Millman, Mary and Bohn, Dave. (1994) <i><a href="https://www.librarything.com/work/19726737/t/Master-of-Line-John-W-Winkler-American-Etcher">Master of line</a>: John Winkler, American etcher</i>. Santa Barbara: Capra Press. pg. 159ff.
 </div>
 
 <div class="fn" id="fn-judy-gumbo-arrives">
 <a href="#fnb-judy-gumbo-arrives">^</a>
-[*]
+<span class="fnn">[*]</span>
 Gumbo, J. (2023) <i><a href="https://www.librarything.com/work/27491806/t/Yippie-Girl-Exploits-in-Protest-and-Defeating-the-FBI">Yippie girl</a>: exploits in protest and defeating the FBI</i>. New York: Three Rooms Press. pg. 17.
 </div>
 
 <div class="fn" id="fn-who-the-hell">
 <a href="#fnb-who-the-hell">^</a>
-[*]
+<span class="fnn">[*]</span>
 Albert, S. E. (2003) <i><a href="https://www.librarything.com/work/1156101/t/Who-the-Hell-is-Stew-Albert">Who the hell is Stew Albert?</a> a memoir</i>. Los Angeles: Red Hen Press. pg. 107.
 </div>
+
+</body>
